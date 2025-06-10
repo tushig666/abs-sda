@@ -1,18 +1,18 @@
-import React, { useState,userEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./hero.css";
 const Hero = () => {
-    const {currentImage, setCurrentImage} = useState(0);
-    const images = [
-        "/images/hero1.jpg",
-        "/images/hero2.jpg",
-        "/images/hero3.jpg"
-    ];
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImage((prev) => (prev + 1) % images.length);
-        }, 3000); // Change image every 3 seconds
-        return () => clearInterval(interval);
-    }, [images.length]);
+  const { currentImage, setCurrentImage } = useState(0);
+  const images = [
+    "/images/hero1.jpg",
+    "/images/hero2.jpg",
+    "/images/hero3.jpg",
+  ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+    return () => clearInterval(interval);
+  }, [images.length]);
   return (
     <section id="home" className="hero">
       <div className="hero_slider">
@@ -57,7 +57,6 @@ const Hero = () => {
           ></span>
         ))}
       </div>
-    
     </section>
   );
 };
