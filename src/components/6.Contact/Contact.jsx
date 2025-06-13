@@ -1,4 +1,4 @@
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import {
   FaMapMarkerAlt
@@ -17,20 +17,20 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_your_service_id",
-        "template_your_template_id",
+        "service_your_service_id", // Replace with your actual EmailJS service ID
+        "template_your_template_id", // Replace with your actual EmailJS template ID
         form.current,
-        "user_your_user_id"
+        "your_public_key" // Replace with your actual EmailJS public key
       )
       .then(
         (result) => {
           setStatus("Message sent successfully!");
-          console.log("Success",result.text);
+          console.log("Success", result.text);
           form.current.reset(); // Reset the form after successful submission
         },
         (error) => {
           setStatus("Failed to send message. Please try again.");
-          console.log("Error",error.text);
+          console.log("Error", error.text);
         }
       );
   };
