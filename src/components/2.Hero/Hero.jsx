@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./hero.css";
+import "./Hero.css";
 const Hero = () => {
   const { currentImage, setCurrentImage } = useState(0);
   const images = [
