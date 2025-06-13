@@ -1,35 +1,36 @@
 import "./Project.css";
 
+const projectData = [
+  {
+    title: "Residential Building",
+    description: "A modern residential building with state-of-the-art amenities.",
+    image: "https://via.placeholder.com/300?text=Residential+Building",
+  },
+  {
+    title: "Commercial Complex",
+    description: "A commercial complex designed for business and retail spaces.",
+    image: "https://via.placeholder.com/300?text=Commercial+Complex",
+  },
+  {
+    title: "Infrastructure Project",
+    description: "An infrastructure project that enhances urban connectivity.",
+    image: "https://via.placeholder.com/300?text=Infrastructure+Project",
+  },
+];
 const Project = () => {
   return (
-    <section className="project">
-      <div className="project_content">
-        <h2 className="project_title">Our Projects</h2>
-        <div className="project_list">
-          <div className="project_item">
-            <img src="project1.jpg" alt="Project 1" className="project_image" />
-            <h3 className="project_name">Project 1</h3>
-            <p className="project_description">
-              A brief description of Project 1, highlighting its key features and achievements.
-            </p>
-        </div>
-            <div className="project_item">
-                <img src="project2.jpg" alt="Project 2" className="project_image" />
-                <h3 className="project_name">Project 2</h3>
-                <p className="project_description">
-                A brief description of Project 2, showcasing its innovative design and execution.
-                </p>
-            </div>
-            <div className="project_item">
-                <img src="project3.jpg" alt="Project 3" className="project_image" />
-                <h3 className="project_name">Project 3</h3>
-                <p className="project_description">
-                A brief description of Project 3, emphasizing its impact on the community.
-                </p>
-            </div>
-        </div>
+    <section id="project" className="project">
+      <h2 className="project-title">Our Projects</h2>
+      <div className="project-grid">
+        {projectData.map((project, index) => (
+          <div className="project_item" key={index}>
+            <img src={project.image} alt={project.title} className="project_image" />
+            <h3 className="project_item_title">{project.title}</h3>
+            <p className="project_item_description">{project.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
-}
+};
 export default Project;

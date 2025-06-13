@@ -2,7 +2,7 @@ import "./CeoMessage.css";
 
 const CeoMessage = () => {
   return (
-    <section className="ceo-message">
+    <section id="ceo-message" className="ceo-message">
       <div className="ceo-message_content">
         <h2 className="ceo-message_title">Message from the CEO</h2>
         <p className="ceo-message_text">
